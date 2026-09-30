@@ -63,15 +63,55 @@ footer {
 footer p {
   margin: 0;
 }
-
-/* Animación de aparición */
-.fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+/* Paleta personalizada */
+:root {
+  --primary-color: #0A66C2; /* LinkedIn azul */
+  --secondary-color: #6f42c1; /* violeta moderno */
+  --dark-color: #24292e; /* GitHub negro */
 }
 
-.fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
+/* Hero con degradado */
+header {
+  background: linear-gradient(135deg, #6f42c1, #0A66C2); /* violeta a azul LinkedIn */
+  color: #fff;
+}
+
+/* Tarjetas de proyectos con hover */
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* Botón LinkedIn */
+.btn-linkedin {
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+.btn-linkedin:hover {
+  background-color: #004182;
+}
+
+/* Botón GitHub */
+.btn-github {
+  background-color: var(--dark-color);
+  color: #fff;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+.btn-github:hover {
+  background-color: #000;
+}
+
+/* Animaciones de entrada */
+section {
+  animation: fadeInUp 1s ease;
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
 }
